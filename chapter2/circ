@@ -1,4 +1,7 @@
 #!/usr/bin/perl
 print "Enter a radius: ";
 chomp($radius = <STDIN>);
+if ($radius < 0) {
+	$radius = 0
+}
 print "The circunference is: ", 2 * 3.14 * $radius, "\n";
