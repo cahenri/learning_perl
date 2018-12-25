@@ -1,0 +1,7 @@
+#!/usr/bin/perl
+use utf8;
+print "Enter a string: ";
+$str = <STDIN>;
+print "Number of times to repeat: ";
+$n = <STDIN>;
+print $str x $n;

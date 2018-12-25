@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+use utf8;
 print "Enter the first number: ";
 chomp($first = <STDIN>);
 print "Enter the second number: ";

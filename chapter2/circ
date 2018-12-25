@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+use utf8;
 print "Enter a radius: ";
 chomp($radius = <STDIN>);
 if ($radius < 0) {
