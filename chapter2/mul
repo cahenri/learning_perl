@@ -1,0 +1,6 @@
+#!/usr/bin/perl
+print "Enter the first number: ";
+chomp($first = <STDIN>);
+print "Enter the second number: ";
+chomp($second = <STDIN>);
+print "The product is: ", $first * $second, "\n";
