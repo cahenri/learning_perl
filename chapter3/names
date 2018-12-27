@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+use utf8;
+# @names = (fred, betty, barney, dino, wilma, pebbles, bamm-bamm)
+@names = qw/ fred betty barney dino wilma pebbles bamm-bamm /;
+print "Enter some numbers, then press <C-d>:\n";
+chomp(@num = <STDIN>);
+print "Corresponding names:\n";
+foreach (@num) {
+	print "$_: @names[$_]\n";
+}
