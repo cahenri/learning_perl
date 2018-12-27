@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+use utf8;
+#end-of-input: <C-d>
+print "Enter some words, then finish by pressing <C-d>:\n";
+chomp(@list = <STDIN>);
+@list = reverse @list;
+print "( ";
+foreach (@list) {
+	print "$_ ";
+}
+print ")\n";
