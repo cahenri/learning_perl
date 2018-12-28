@@ -1,0 +1,6 @@
+#!/usr/bin/perl
+use utf8;
+print "Enter names to sort:\n";
+chomp(@names = <STDIN>);
+@sorted = sort @names;
+print "Sorted names: ", "@sorted", "\n"; # @sorted is converted to a space separated values scalar

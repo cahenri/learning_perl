@@ -1,0 +1,4 @@
+#!/usr/bin/perl
+use utf8;
+print "Enter names to sort:\n";
+print "Sorted names:\n", sort <STDIN>;
