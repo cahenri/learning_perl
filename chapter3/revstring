@@ -4,4 +4,4 @@ use utf8;
 print "Enter some words, then finish by pressing <C-d>:\n";
 chomp(@list = <STDIN>);
 @list = reverse @list;
-print "( @list )\n"; #list in a scalar context
+print "( @list )\n"; # list in double quotes interpolation
