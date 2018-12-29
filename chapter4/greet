@@ -1,0 +1,19 @@
+#!/usr/bin/perl
+use utf8;
+use v5.028; #strict pragma is implicit here
+greet("Fred");
+greet("Barney");
+greet("Wilma");
+greet("Betty");
+
+sub greet {
+	my ($name) = @_;
+	state $previous_name;
+	print "Hi $name! ";
+	if (!defined($previous_name)) {
+		print "You are the first here!\n";
+	} else {
+		print "$previous_name is also here!\n";
+	}
+	$previous_name = $name;
+}
