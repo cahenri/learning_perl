@@ -1,0 +1,17 @@
+#!/usr/bin/perl
+use utf8;
+use strict;
+my @fred = qw{ 1 3 5 7 9 };
+my $fred_total = total(@fred);
+print "The total of \@fred is $fred_total.\n";
+print "Enter some numbers in separate lines: ";
+my $user_total = total(<STDIN>);
+print "The total of these numbers is: $user_total.\n";
+
+sub total {
+	my $acc;
+	foreach (@_) {
+		$acc += $_;
+	}
+	$acc;
+}
