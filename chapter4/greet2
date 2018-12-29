@@ -1,0 +1,19 @@
+#!/usr/bin/perl
+use utf8;
+use v5.028; #strict pragma is implicit here
+greet("Fred");
+greet("Barney");
+greet("Wilma");
+greet("Betty");
+
+sub greet {
+	my ($name) = @_;
+	state @names;
+	print "Hi $name! ";
+	if (@names) {
+		print "I've seen: @names\n";
+	} else {
+		print "You are the first here!\n";
+	}
+	push @names, $name;
+}
