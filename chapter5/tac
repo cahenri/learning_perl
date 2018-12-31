@@ -1,0 +1,7 @@
+#!/usr/bin/perl
+use v5.028;
+use warnings;
+use utf8;
+
+@ARGV = reverse @ARGV;
+print reverse <>;
