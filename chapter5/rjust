@@ -3,7 +3,8 @@ use v5.028;
 use warnings;
 use utf8;
 
-say 'Enter some strings:';
-my @strlist = <STDIN>;
-chomp @strlist;
-printf "12345678901234567890\n" . ("%20s\n" x @strlist), @strlist;
+say 'Enter a column width, then some strings:';
+chomp( my $width = <STDIN> );
+chomp( my @strlist = <STDIN> );
+say "1234567890" x (($width + 9)/10);
+printf "%${width}s\n" x @strlist, @strlist;
