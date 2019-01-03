@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+use v5.028;
+use warnings;
+use utf8;
+
+my %hash = (
+	"fred" => "flintstone",
+	"barney" => "rubble",
+	"wilma" => "flintstone"
+);
+
+print "Enter a name: ";
+chomp( my $name = <STDIN> );
+say "The family is: $hash{$name}";
