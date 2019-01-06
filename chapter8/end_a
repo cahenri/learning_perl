@@ -1,0 +1,13 @@
+#!/usr/bin/perl
+use v5.028;
+use warnings;
+use utf8;
+
+while(<>) {
+	chomp;
+	if (m{\w*a\b}) {
+		say "Matched: |$`<$&>$'|";
+	} else {
+		say "No match: |$_|";
+	}
+}
