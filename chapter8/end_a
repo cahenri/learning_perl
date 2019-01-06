@@ -5,9 +5,9 @@ use utf8;
 
 while(<>) {
 	chomp;
-	if (m{(\w*a\b)}) {
+	if (m{(?<word>\w*a\b)}) {
 		say "Matched: |$`<$&>$'|";
-		say "\$1 contains '$1'";
+		say "\$+{word} contains '$+{word}'";
 	} else {
 		say "No match: |$_|";
 	}
