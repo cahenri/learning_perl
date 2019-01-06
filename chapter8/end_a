@@ -5,9 +5,10 @@ use utf8;
 
 while(<>) {
 	chomp;
-	if (m{(?<word>\w*a\b)}) {
+	if (m{(?<word>\w*a\b)(?<last>.{0,5})}) {
 		say "Matched: |$`<$&>$'|";
 		say "\$+{word} contains '$+{word}'";
+		say "\$+{last} five contais '$+{last}'";
 	} else {
 		say "No match: |$_|";
 	}
