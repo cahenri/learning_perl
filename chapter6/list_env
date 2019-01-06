@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+use v5.028;
+use warnings;
+use utf8;
+
+my $width = 0;
+foreach my $key (keys %ENV) {
+	my $keylen = length $key;
+	$width = $keylen if $keylen > $width;
+}
+
+foreach my $key (sort keys %ENV) {
+	printf( "%${width}s => %s\n", $key, $ENV{$key} );
+}
