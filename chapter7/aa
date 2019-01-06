@@ -1,0 +1,8 @@
+#!/usr/bin/perl
+use v5.028;
+use warnings;
+use utf8;
+
+while(<>) {
+	print if /(\S)\g{1}/;
+}
