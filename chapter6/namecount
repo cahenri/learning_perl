@@ -1,0 +1,21 @@
+#!/usr/bin/perl
+use v5.028;
+use warnings;
+use utf8;
+
+my %names;
+say "Enter some names:";
+while(<>) {
+	chomp;
+	$names{$_} += 1; # undef is treated as 1 when used as a number
+}
+say "Names and number of times:";
+
+# unsorted option:
+#while ( my ($key, $value) = each %names ) { # my is declaring two scalars. But the assignment is done in list context
+#	print "$key => $value\n";
+#}
+
+foreach my $name (sort keys %names) {
+	say "$name => $names{$name}";
+}
