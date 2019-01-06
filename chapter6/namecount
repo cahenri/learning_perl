@@ -5,7 +5,7 @@ use utf8;
 
 my %names;
 say "Enter some names:";
-while(<>) {
+while(<STDIN>) {
 	chomp;
 	$names{$_} += 1; # undef is treated as 1 when used as a number
 }
