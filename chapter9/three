@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+use v5.028;
+use warnings;
+use utf8;
+
+my $what = "fred|barney";
+
+for (<>) { #When no arguments are given, the diamond use STDIN as input
+	print "Three consecutive matches in: $_" if m/($what){3}/;
+}
