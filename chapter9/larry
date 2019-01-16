@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+use v5.028;
+use warnings;
+use utf8;
+
+my $in = $ARGV[0];
+unless (defined $in) {
+	die "Usage: $0 filename\n";
+}
+my $out = $in;
+$out =~ s#$#.out#;
+
+unless (open IN, "<", $in) {
+	die "Could not open file $in. ($!)";
+}
+
+unless (open OUT, ">", $out) {
+	die "Could not create file $out. ($!)";
+}
+
+while(<IN>) {
+	s#fred#larry#ig;
+	print OUT;
+}
