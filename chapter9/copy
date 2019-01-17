@@ -3,8 +3,22 @@ use v5.028;
 use warnings;
 use utf8;
 
+my %do_these;
+for (@ARGV) {
+	$do_these{$_} = 1;
+}
+
+while (<>) {
+	if (/## Copyright/) {
+		delete $do_these{$ARGV};
+	}
+}	
+
+@ARGV = keys %do_these;
 $^I = ".bak";
-while(<>) {
-	$_ .= "## Copyright (C) 20XX by Yours Truly\n" if m{^#!};
+while (<>) {
+	if (m{^#!}) {
+		$_ .= "## Copyright (C) 20XX by Yours Truly\n"; 
+	}
 	print;
 }
