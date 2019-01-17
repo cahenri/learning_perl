@@ -19,6 +19,9 @@ unless (open OUT, ">", $out) {
 }
 
 while(<IN>) {
-	s#fred#larry#ig;
-	print OUT;
+	chomp;
+	s#fred#\n#ig;
+	s#wilma#Fred#ig;
+	s#\n#Wilma#ig;
+	print OUT "$_\n";
 }
