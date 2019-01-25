@@ -1,0 +1,11 @@
+#!/usr/bin/perl -w
+use v5.026;
+use warnings;
+use Module::CoreList;
+
+my %modules = %{ $Module::CoreList::version{5.008} };
+say "Modules that came with version 5.008 of perl:";
+
+for (keys %modules) {
+	print join "\n", keys %modules;
+}
