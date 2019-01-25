@@ -1,0 +1,6 @@
+#!/usr/bin/perl -w
+use v5.026;
+
+for (@ARGV) {
+	print "-ore: $_\n" if (-o && -r _ && -w _);
+}
