@@ -1,0 +1,20 @@
+#!/usr/bin/perl -w
+use v5.026;
+
+for (@ARGV) {
+	my @mod = &filetest($_);
+	say ("The file $_ is: " . join(", ", @mod)) if @mod;
+	say "The file $_ does not exist" unless @mod;
+}
+
+sub filetest {
+	my $file = shift @_;
+	my @attrib;
+	push @attrib, "readable" if -r $file;
+	push @attrib, "writable" if -w $file;
+	push @attrib, "executable" if -x $file;
+	unless (@attrib) {
+		push @attrib, "present" if -e $file;
+	}
+	return @attrib;
+}
