@@ -1,0 +1,15 @@
+#!/usr/bin/perl -w
+use v5.026;
+
+print "Change dir to: ";
+chomp (my $dir = <STDIN>);
+if ($dir =~ m/^\s*$/) {
+	chdir or die "Cannot chdir to home: $!\n";
+} else {
+	chdir $dir or die "Cannot chdir to $dir: $!\n";
+}
+
+opendir DOT, "." or die "Failed to open dirhandle: $!";
+for (sort readdir DOT) {
+	print "$_\n";
+}
