@@ -1,0 +1,9 @@
+#!/usr/bin/perl -w
+use v5.026;
+
+say "Change dir to: ";
+chomp (my $dir = <STDIN>);
+$dir = glob "~" if $dir =~ m/^\s*$/;
+chdir $dir or die "Cannot chdir to $dir: $!\n";
+my @contents = glob "*";
+print "@contents\n";
