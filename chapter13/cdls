@@ -5,5 +5,8 @@ say "Change dir to: ";
 chomp (my $dir = <STDIN>);
 $dir = glob "~" if $dir =~ m/^\s*$/;
 chdir $dir or die "Cannot chdir to $dir: $!\n";
-my @contents = glob "*";
-print "@contents\n";
+my @contents = glob "* .*";
+say "$dir contents:";
+for (sort @contents) {
+	print "$_\n";
+}
